@@ -1,0 +1,226 @@
+{
+  "main": {
+    "id": "e06a8974895bb776",
+    "type": "split",
+    "children": [
+      {
+        "id": "98e4af550642047d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d41e3a772fd2324d",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "928624c685560a63",
+    "type": "split",
+    "children": [
+      {
+        "id": "477a77ebdacca686",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "47dfdad1c69b7796",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "b5f60e23ab2066c5",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "92e7bd2e8045ce7d",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "e99a6307b0bd61b7",
+    "type": "split",
+    "children": [
+      {
+        "id": "dbba5859fda57872",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "27d8dea33b4fc9dd",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "30-Skills/teach-coitb-html-css/references/curriculum.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
+            }
+          },
+          {
+            "id": "8c908865b55a705d",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "30-Skills/teach-coitb-html-css/references/curriculum.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "aa0b820771a7b64c",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "6c7b6c9f0a60fbca",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "5e4e74b98d284f67",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "30-Skills/teach-coitb-html-css/references/curriculum.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "d41e3a772fd2324d",
+  "lastOpenFiles": [
+    "30-Skills/bootstrap-color-system/Bootstrap Color System.md",
+    "30-Skills/domain-dns-tls-operations/SKILL.md",
+    "Welcome.md",
+    "60-Templates/Templates Map.md",
+    "60-Templates/Technology ADR.md",
+    "60-Templates/Service Integration Playbook.md",
+    "60-Templates/Security Review.md",
+    "60-Templates/Project Intake.md",
+    "60-Templates/Interface Design Brief.md",
+    "00-System/Vault Map.md",
+    "00-System/Research Standard.md",
+    "00-System/Research Queue.md",
+    "00-System/Operating Principles.md",
+    "00-System/Maintenance Log.md",
+    "00-System/Glossary.md",
+    "30-Skills/teach-coitb-html-css/references/curriculum.md",
+    "30-Skills/account-management-experience/Account Management Experience.md",
+    "20-Catalog/Reviews/Second Brain Context Access Skill Review.md",
+    "30-Skills/second-brain-context-access/Second Brain Context Access.md",
+    "30-Skills/second-brain-context-access/SKILL.md",
+    "30-Skills/second-brain-context-access",
+    "20-Catalog/Reviews/COITB Certified GPT Professional Teaching Skill Review.md",
+    "30-Skills/teach-coitb-gpt-professional/references/curriculum.md",
+    "30-Skills/teach-coitb-gpt-professional/references/exam-blueprint.md",
+    "30-Skills/teach-coitb-gpt-professional/Teach COITB Certified GPT Professional.md",
+    "30-Skills/teach-coitb-gpt-professional/SKILL.md",
+    "30-Skills/teach-coitb-gpt-professional/references",
+    "30-Skills/teach-coitb-gpt-professional",
+    "20-Catalog/Reviews/Account and Administration Interface Skills Review.md",
+    "30-Skills/management-dashboard-design/references",
+    "30-Skills/management-dashboard-design",
+    "30-Skills/user-administration-console/references",
+    "30-Skills/user-administration-console",
+    "30-Skills/account-management-experience/references",
+    "30-Skills/account-management-experience",
+    "30-Skills/user-account-lifecycle/references"
+  ]
+}
