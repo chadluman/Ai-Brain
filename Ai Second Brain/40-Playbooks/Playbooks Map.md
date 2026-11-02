@@ -2,7 +2,7 @@
 status: reviewed
 owner: vault-owner
 created: 2026-10-21
-last_verified: 2026-10-21
+last_verified: 2026-11-02
 review_by: 2027-01-21
 risk: R0
 tags: [playbooks, map]
@@ -24,5 +24,8 @@ Playbooks connect focused skills into an ordered delivery path. They route to on
 | [MongoDB Atlas Integration](MongoDB%20Atlas%20Integration.md) | Integrating a managed document database with schema validation, indexes, network controls, roles, and backup | Draft pending isolated validation, failover, and restore exercise |
 | [Cloudflare D1 Integration](Cloudflare%20D1%20Integration.md) | Integrating Worker-bound SQLite-compatible storage with tenant-scoped queries, limits, consistency, and Time Travel | Draft pending isolated Worker, limit, and restore exercise |
 | [Amazon Aurora PostgreSQL Integration](Amazon%20Aurora%20PostgreSQL%20Integration.md) | Integrating Aurora PostgreSQL with VPC/IAM controls, roles, pooling, capacity, failover, and recovery | Draft pending isolated infrastructure, failover, and restore exercise |
+| [Clerk Integration](Clerk%20Integration.md) | Integrating Clerk identity for Next.js, with proxy/middleware protection, server-side identity checks, and per-environment keys | Draft pending isolated sign-in, authorization, and key-rotation exercise |
+| [Stripe Integration](Stripe%20Integration.md) | Integrating Stripe Checkout subscriptions, Customer Portal, webhook provisioning, and ledger entitlements | Draft pending isolated checkout, webhook, and reconciliation exercise |
+| [Vercel Integration](Vercel%20Integration.md) | Deploying Next.js to Vercel with Production, Preview, and Development environments, scoped variables, integrations, and rollback | Draft pending isolated deployment, variable-scoping, and rollback exercise |
 
 These provider playbooks are reviewed documentation, not provider or dependency approval. Before project use, re-verify current official sources and complete exact-version review for every executable asset. Provisioning, credentials, billing, production changes, real-data operations, restore, and deletion remain R3.
