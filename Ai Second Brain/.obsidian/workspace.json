@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "98e4af550642047d",
+        "id": "3479a0df9dd0b3e7",
         "type": "tabs",
         "children": [
           {
-            "id": "d41e3a772fd2324d",
+            "id": "d6e76cc43e9c017f",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "00-System/Vault Map.md",
+                "file": "30-Skills/Skills Map.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Vault Map"
+              "title": "Skills Map"
             }
           }
         ]
@@ -188,8 +188,13 @@
       "bases:Create new base": false
     }
   },
-  "active": "47dfdad1c69b7796",
+  "active": "d6e76cc43e9c017f",
   "lastOpenFiles": [
+    "30-Skills/teach-web-quality-delivery/SKILL.md",
+    "30-Skills/teach-frontend-engineering/SKILL.md",
+    "30-Skills/teach-senior-web-development/Teach Senior Web Development.md",
+    "30-Skills/Skills Map.md",
+    "00-System/Vault Map.md",
     "30-Skills/teach-coitb-javascript/references/curriculum.md",
     "30-Skills/teach-coitb-javascript/references/exam-blueprint.md",
     "30-Skills/teach-coitb-javascript/Teach COITB JavaScript.md",
@@ -220,11 +225,6 @@
     "30-Skills/teach-coitb-mysql/SKILL.md",
     "30-Skills/teach-coitb-mysql/references",
     "30-Skills/teach-coitb-mysql",
-    "30-Skills/teach-coitb-certification-pathway/references/exam-blueprint.md",
-    "30-Skills/teach-coitb-certification-pathway/references/curriculum.md",
-    "30-Skills/teach-coitb-certification-pathway/Teach COITB Certification Pathway.md",
-    "30-Skills/teach-coitb-certification-pathway/SKILL.md",
-    "Welcome.md",
-    "10-Architecture/Architecture Map.md"
+    "30-Skills/teach-coitb-certification-pathway/references/exam-blueprint.md"
   ]
 }
