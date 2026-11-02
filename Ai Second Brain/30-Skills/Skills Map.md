@@ -2,7 +2,7 @@
 status: approved
 owner: vault-owner
 created: 2026-10-21
-last_verified: 2026-10-31
+last_verified: 2026-11-02
 review_by: 2027-01-21
 risk: R0
 tags: [skills, map]
@@ -151,5 +151,13 @@ sources: []
 | [Session and Cookie Security](session-cookie-security/Session%20and%20Cookie%20Security.md) | Securing browser sessions, cookies, CSRF, OAuth tokens, rotation, logout, and revocation | Draft pending adversarial multi-browser session validation |
 | [Obsidian Vault Practices](obsidian-vault-practices/Obsidian%20Vault%20Practices.md) | Designing, operating, troubleshooting, and safely extending Obsidian vaults | Approved with conditions; see the [security review](../20-Catalog/Reviews/Obsidian%20Vault%20Practices%20Skill%20Review.md), re-verify version-sensitive features, and review extensions before activation |
 | [Second Brain Context Access](second-brain-context-access/Second%20Brain%20Context%20Access.md) | Giving filesystem-capable agents a minimal-context, read-first path to explain or make bounded changes to this vault without externalizing or restructuring it | Approved with conditions; see the [security review](../20-Catalog/Reviews/Second%20Brain%20Context%20Access%20Skill%20Review.md); actual tool access and integrations remain separately authorized |
+| [Full Stack Type Safety](full-stack-type-safety/Full%20Stack%20Type%20Safety.md) | Keeping client and server types in agreement with shared schemas and runtime validation | Draft pending representative full-stack validation |
+| [Full Stack Server Data Design](full-stack-server-data-design/Full%20Stack%20Server%20Data%20Design.md) | Designing server loaders, server actions, mutations, and revalidation for full-stack frameworks | Draft pending representative framework validation |
+| [AI Prompt Structured Output Design](ai-prompt-structured-output-design/AI%20Prompt%20Structured%20Output%20Design.md) | Designing versioned prompts, structured outputs, tool calls, validation, and safe fallbacks for web AI features | Draft pending representative prompt and evaluation validation |
+| [AI Streaming Web Design](ai-streaming-web-design/AI%20Streaming%20Web%20Design.md) | Designing streaming AI responses in a web UI, with partial rendering, cancellation, and error recovery | Draft pending representative streaming validation |
+| [WebView Hybrid Integration](webview-hybrid-integration/WebView%20Hybrid%20Integration.md) | Wrapping a web app as an iOS or Android app with a narrow, authorized native bridge and store-ready lifecycle | Draft pending representative device and store validation |
+| [Mobile Web Experience Design](mobile-web-experience-design/Mobile%20Web%20Experience%20Design.md) | Designing web experiences for iOS Safari, Android Chrome, and in-app browsers, including viewport, touch, install, and push quirks | Draft pending representative real-device validation |
+| [Developer Extension Evaluation](developer-extension-evaluation/Developer%20Extension%20Evaluation.md) | Evaluating, installing, configuring, and removing IDE, editor, and browser developer extensions, including AI coding assistants | Draft pending representative extension review validation |
+| [Browser Extension Development](browser-extension-development/Browser%20Extension%20Development.md) | Designing and building a browser extension with minimal permissions, cross-browser behavior, and store-ready privacy | Draft pending representative browser and store validation |
 
 Draft skills may guide work, but their outputs must be reviewed and the skill must be revised from observed failures before it is marked approved. The COITB GPT package has an [R0 safety review](../20-Catalog/Reviews/COITB%20Certified%20GPT%20Professional%20Teaching%20Skill%20Review.md). The initial account-management, user-administration, and management-dashboard packages share an [R0 safety review](../20-Catalog/Reviews/Account%20and%20Administration%20Interface%20Skills%20Review.md).
