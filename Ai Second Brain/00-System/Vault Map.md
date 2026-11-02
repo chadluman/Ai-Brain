@@ -2,7 +2,7 @@
 status: approved
 owner: vault-owner
 created: 2026-10-21
-last_verified: 2026-10-31
+last_verified: 2026-11-02
 review_by: 2027-01-21
 risk: R0
 tags: [system, map]
@@ -35,8 +35,11 @@ For a user-facing product, copy the [Interface Design Brief](../60-Templates/Int
 | Skills | Focused AI operating instructions | [Skills Map](../30-Skills/Skills%20Map.md) |
 | Playbooks | Ordered, end-to-end delivery procedures | [Playbooks Map](../40-Playbooks/Playbooks%20Map.md) |
 | Templates | Repeatable project and review records | [Templates Map](../60-Templates/Templates%20Map.md) |
+| Architecture | Cross-cutting patterns that apply across projects | [Architecture Map](../10-Architecture/Architecture%20Map.md) |
+| Projects | Project briefs, ADRs, plans, and project-specific notes only | [Projects Map](../50-Projects/Projects%20Map.md) |
+| Archive | Superseded material retained for history, not for new work | [Archive Map](../90-Archive/Archive%20Map.md) |
 
-Folders for architecture patterns, catalog entries, playbooks, projects, and archives should be created only when they receive real content.
+Architecture, Projects, and Archive folders start with a routing map only; add pattern, project, and archived notes only when they receive real content.
 
 ## Status Vocabulary
 
@@ -69,5 +72,6 @@ Review a note when its `review_by` date arrives or when a security, compatibilit
 | Technology catalog | Source registry, design-reference catalog, and six-service backend/database shortlist reviewed; exact provider/plan/asset decisions remain project-driven |
 | End-to-end web application playbook | Drafted and link-validated; pending representative project exercise |
 | Intentional interface design playbook | Drafted and link-validated; pending representative design-to-implementation exercise |
+| Architecture, Projects, and Archive entry points | Routing maps added 2026-11-02; no pattern, project, or archived notes yet |
 
 
