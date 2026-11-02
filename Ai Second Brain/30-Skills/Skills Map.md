@@ -2,7 +2,7 @@
 status: approved
 owner: vault-owner
 created: 2026-10-21
-last_verified: 2026-10-31
+last_verified: 2026-11-02
 review_by: 2027-01-21
 risk: R0
 tags: [skills, map]
@@ -151,5 +151,14 @@ sources: []
 | [Session and Cookie Security](session-cookie-security/Session%20and%20Cookie%20Security.md) | Securing browser sessions, cookies, CSRF, OAuth tokens, rotation, logout, and revocation | Draft pending adversarial multi-browser session validation |
 | [Obsidian Vault Practices](obsidian-vault-practices/Obsidian%20Vault%20Practices.md) | Designing, operating, troubleshooting, and safely extending Obsidian vaults | Approved with conditions; see the [security review](../20-Catalog/Reviews/Obsidian%20Vault%20Practices%20Skill%20Review.md), re-verify version-sensitive features, and review extensions before activation |
 | [Second Brain Context Access](second-brain-context-access/Second%20Brain%20Context%20Access.md) | Giving filesystem-capable agents a minimal-context, read-first path to explain or make bounded changes to this vault without externalizing or restructuring it | Approved with conditions; see the [security review](../20-Catalog/Reviews/Second%20Brain%20Context%20Access%20Skill%20Review.md); actual tool access and integrations remain separately authorized |
+
+| [Subscription Entitlement Design](subscription-entitlement-design/Subscription%20Entitlement%20Design.md) | Turning a paid subscription into feature access that is granted, changed, and revoked reliably, with your own entitlement record as the source of truth | Draft pending representative validation |
+| [Streaming Platform Adapter Design](streaming-platform-adapter-design/Streaming%20Platform%20Adapter%20Design.md) | Ingesting live events from a streaming platform through its authorized API only, normalized into one internal event shape | Draft pending representative validation |
+| [Livestream Overlay Transport Design](livestream-overlay-transport-design/Livestream%20Overlay%20Transport%20Design.md) | Delivering live state to a browser source in OBS or a similar broadcaster, with a token-scoped overlay URL and fast reconnect | Draft pending representative validation |
+| [Desktop Web Shell Design](desktop-web-shell-design/Desktop%20Web%20Shell%20Design.md) | Wrapping a web app in a desktop shell with a narrow native bridge, without giving the web page unrestricted machine access | Draft pending representative validation |
+| [Desktop App Distribution Design](desktop-app-distribution-design/Desktop%20App%20Distribution%20Design.md) | Shipping a signed, auto-updating desktop app with staged rollout and a rollback path | Draft pending representative validation |
+| [User Onboarding Design](user-onboarding-design/User%20Onboarding%20Design.md) | Designing a first-run path that gets a new user to one meaningful outcome, with activation measured | Draft pending representative validation |
+| [User Data Export Design](user-data-export-design/User%20Data%20Export%20Design.md) | Letting a user obtain their own data in a structured, commonly used, machine-readable form, without leaking other people's data | Draft pending representative validation |
+| [AI Agent Workflow Design](ai-agent-workflow-design/AI%20Agent%20Workflow%20Design.md) | Structuring a multi-step AI task as a loop or a graph with state, stopping conditions, and human approval | Draft pending representative validation |
 
 Draft skills may guide work, but their outputs must be reviewed and the skill must be revised from observed failures before it is marked approved. The COITB GPT package has an [R0 safety review](../20-Catalog/Reviews/COITB%20Certified%20GPT%20Professional%20Teaching%20Skill%20Review.md). The initial account-management, user-administration, and management-dashboard packages share an [R0 safety review](../20-Catalog/Reviews/Account%20and%20Administration%20Interface%20Skills%20Review.md).
