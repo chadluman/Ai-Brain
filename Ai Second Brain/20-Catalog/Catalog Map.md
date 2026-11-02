@@ -17,6 +17,7 @@ Start here when you need a dated, comparable shortlist or a review of what the v
 |---|---|
 | [Backend and Database Services](Backend%20and%20Database%20Services.md) | Backend and database service shapes, with a qualified shortlist |
 | [Auth Payments Hosting Services](Auth%20Payments%20Hosting%20Services.md) | Auth, payments, and hosting service shapes, with a qualified shortlist |
+| [Web Lifecycle Services](Web%20Lifecycle%20Services.md) | Concrete services, libraries, extensions, and plug-ins across the full website lifecycle, with integration, capabilities, limitations, and evidence-graded cost shapes |
 
 ## Boundaries and References
 
