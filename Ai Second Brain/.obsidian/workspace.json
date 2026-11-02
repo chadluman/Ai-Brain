@@ -190,10 +190,12 @@
   },
   "active": "d6e76cc43e9c017f",
   "lastOpenFiles": [
+    "Welcome.md",
+    "90-Archive/Archive Map.md",
+    "30-Skills/Skills Map.md",
     "30-Skills/teach-web-quality-delivery/SKILL.md",
     "30-Skills/teach-frontend-engineering/SKILL.md",
     "30-Skills/teach-senior-web-development/Teach Senior Web Development.md",
-    "30-Skills/Skills Map.md",
     "00-System/Vault Map.md",
     "30-Skills/teach-coitb-javascript/references/curriculum.md",
     "30-Skills/teach-coitb-javascript/references/exam-blueprint.md",
@@ -222,9 +224,7 @@
     "30-Skills/teach-coitb-mysql/references/exam-blueprint.md",
     "30-Skills/teach-coitb-mysql/references/curriculum.md",
     "30-Skills/teach-coitb-mysql/Teach COITB MySQL.md",
-    "30-Skills/teach-coitb-mysql/SKILL.md",
     "30-Skills/teach-coitb-mysql/references",
-    "30-Skills/teach-coitb-mysql",
-    "30-Skills/teach-coitb-certification-pathway/references/exam-blueprint.md"
+    "30-Skills/teach-coitb-mysql"
   ]
 }
