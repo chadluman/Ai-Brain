@@ -184,4 +184,8 @@ sources: []
 
 | [Faux Product UI Design](faux-product-ui-design/Faux%20Product%20UI%20Design.md) | Designing a faux product UI — a still or short animated cursor demo — that reads as a real product, simplified to what the viewer needs, framed with intent, with every motion having a cause | Draft pending representative validation |
 
+| [Discord Server Design](discord-server-design/Discord%20Server%20Design.md) | Designing a Discord server's channels, roles, permissions, and native moderation so a bot is only added where Discord itself cannot do the job | Draft pending representative validation |
+| [Discord App Integration](discord-app-integration/Discord%20App%20Integration.md) | Choosing and implementing the right Discord transport — Gateway bot, HTTP interactions app, or incoming webhook — with correct auth, scopes, and intents | Draft pending representative validation |
+| [Discord Bot Operations](discord-bot-operations/Discord%20Bot%20Operations.md) | Running a Discord bot reliably and safely at scale without getting rate-limited, banned, or leaked | Draft pending representative validation |
+
 Draft skills may guide work, but their outputs must be reviewed and the skill must be revised from observed failures before it is marked approved. The COITB GPT package has an [R0 safety review](../20-Catalog/Reviews/COITB%20Certified%20GPT%20Professional%20Teaching%20Skill%20Review.md). The initial account-management, user-administration, and management-dashboard packages share an [R0 safety review](../20-Catalog/Reviews/Account%20and%20Administration%20Interface%20Skills%20Review.md).
