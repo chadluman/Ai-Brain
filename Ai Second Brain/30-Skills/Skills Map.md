@@ -182,4 +182,6 @@ sources: []
 | [User Data Export Design](user-data-export-design/User%20Data%20Export%20Design.md) | Letting a user obtain their own data in a structured, commonly used, machine-readable form, without leaking other people's data | Draft pending representative validation |
 | [AI Agent Workflow Design](ai-agent-workflow-design/AI%20Agent%20Workflow%20Design.md) | Structuring a multi-step AI task as a loop or a graph with state, stopping conditions, and human approval | Draft pending representative validation |
 
+| [Faux Product UI Design](faux-product-ui-design/Faux%20Product%20UI%20Design.md) | Designing a faux product UI — a still or short animated cursor demo — that reads as a real product, simplified to what the viewer needs, framed with intent, with every motion having a cause | Draft pending representative validation |
+
 Draft skills may guide work, but their outputs must be reviewed and the skill must be revised from observed failures before it is marked approved. The COITB GPT package has an [R0 safety review](../20-Catalog/Reviews/COITB%20Certified%20GPT%20Professional%20Teaching%20Skill%20Review.md). The initial account-management, user-administration, and management-dashboard packages share an [R0 safety review](../20-Catalog/Reviews/Account%20and%20Administration%20Interface%20Skills%20Review.md).
