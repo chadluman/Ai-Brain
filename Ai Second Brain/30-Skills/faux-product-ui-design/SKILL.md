@@ -125,9 +125,9 @@ Before handing over, answer every line honestly:
 - [ ] Nothing in the picture claims a feature, integration, or result that does not exist.
 - [ ] No other product's logo, icon, or identity appears, except as a clearly labelled reference the brief asked for.
 
-## Worked sketch: StreamControl hero
+## Worked sketch: a fictional task board
 
-One interaction, one size, one payoff. A viewer alert arrives during a livestream: the alert card slides into the control surface, the goal bar rolls up by the alert's amount, and the payoff frame holds on the new total. Real words only on the alert and the goal; placeholder lines for the rest of the feed. The control surface fills the stage and runs off one edge; no plate behind it. The loop returns to the pre-alert state with the feed visibly refreshing — the cause for the reset — rather than jumping. This sketch is a design for a marketing illustration; it is not evidence that any platform integration behind it is live.
+One interaction, one size, one payoff. In a fictional task board (no real product, no real account), a task card is dragged to the Done column: the card lifts, the other cards make room, the progress bar rolls up by one task, and the payoff frame holds on the new completion count. Real words only on the moved task and the progress total; placeholder lines for the rest of the board. The board fills the stage and runs off one edge; no plate behind it. The loop returns to the pre-move state with the board visibly refreshing — the cause for the reset — rather than jumping. This sketch is a design for a marketing illustration of a made-up product; it is not evidence that any feature behind it is live.
 
 ## State
 
