@@ -43,10 +43,18 @@ Stored value, money transmission, marketplace payouts, lending, securities, gamb
 9. Define refunds, partial refunds, disputes, negative balances, expired credits, failed payouts, provider outages, migration, and account closure.
 10. Test duplicate requests and webhooks, out-of-order events, timeout after provider success, currency rounding, concurrent spend, insufficient funds, reversal, dispute, reconciliation mismatch, and restore.
 
+## Merchant of Record
+
+Decide who is the merchant of record before choosing a provider, because it decides who holds the customer payment contract, collects and remits transaction tax, and owns refund and dispute handling:
+- Direct processor model: the product's own entity is the merchant of record and keeps tax, refund, and dispute obligations in-house.
+- Merchant-of-record provider: the provider is the merchant of record and takes on tax collection and remittance and the customer payment contract; the product keeps product, pricing, and entitlement decisions.
+- Compare candidates on who is the merchant of record, which markets and payment methods each covers, tax handling, payout timing, webhook and idempotency contracts, subscription and marketplace features, reports, export, support, and exit cost. Candidates reported in 2026 research include Stripe, Paddle, and Lemon Squeezy; Stripe Managed Payments was reported as a February 2026 preview at the time of this refresh (2026-11-09), so confirm its current availability before relying on it. Record the decision and its tax and support consequences; do not revisit it per feature.
+
 ## Required Output
 
 - money and obligation flow map
 - provider comparison and PCI-scope strategy
+- merchant-of-record decision, with tax, refund, and dispute ownership recorded
 - state machines and entitlement invariants
 - chart of accounts or ledger model with balanced posting rules
 - idempotency, webhook, fulfillment, and reconciliation design

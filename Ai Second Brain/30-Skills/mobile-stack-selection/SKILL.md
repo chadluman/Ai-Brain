@@ -42,6 +42,15 @@ Choose a mobile architecture and code-sharing boundary that meets platform exper
 8. Define unit, integration, UI, device, performance, accessibility, network, upgrade, and store-release testing.
 9. Record the decision and migration boundary in an ADR, including how shared modules or screens can be replaced by native code.
 
+## Current Stack Notes (2026)
+
+Use these as the starting position for step 3, and verify the current release of each candidate before citing a version — version numbers are snapshots from the 2026 research and may already be stale.
+
+- React Native: treat the New Architecture as the current default for new work from 0.82 onward. Confirm the migration state of any native modules the project depends on before assuming the new architecture is free.
+- Flutter: Impeller is the current rendering backend. Confirm per-platform status at selection time rather than assuming it behaves the same on both platforms.
+- Kotlin Multiplatform with Compose Multiplatform reached stable in May 2025 for shared UI. Verify current platform coverage and library support before relying on it for a platform the project needs.
+- Where a desktop or web-wrapper shape is also in play, weigh Tauri 2 against Electron: Tauri 2 gives a smaller footprint through the system webview and a narrower native bridge, while Electron gives broader maturity and ecosystem at a larger footprint. See [Desktop Web Shell Design](../desktop-web-shell-design/SKILL.md) for the wrapper side of that comparison.
+
 ## Required Output
 
 - platform capability and constraint matrix

@@ -41,6 +41,12 @@ Do not generalize one provider's delivery guarantees to another. If official del
 8. Add periodic reconciliation against the source of truth for high-impact state. Alert on age, backlog, verification failures, repeated retries, quarantine, and reconciliation drift.
 9. Test valid, invalid, expired, replayed, duplicated, concurrent, out-of-order, oversized, malformed, delayed, and provider-outage cases. Verify effects, not merely HTTP responses.
 
+## Delivery Semantics and Replay Paths
+
+State the delivery guarantee explicitly in the provider contract: most providers deliver at-least-once, meaning duplicates are expected and exactly-once effect must come from the subscriber's deduplication and idempotency, not from the transport.
+- Signature verification on the raw body, deduplication on the event identifier, and durable acceptance before acknowledgement are already required above; record them as the mechanisms that make at-least-once safe rather than as optional hardening.
+- Enumerate every replay path the design supports, and route each through the same verification and deduplication as a first delivery: provider redelivery and retry, manual operator replay, reconciliation-driven backfill from the source-of-truth API, and dead-letter reprocessing after quarantine. Record retention limits for each path, since a replay source that has expired cannot recover a missed event.
+
 ## Required Output
 
 - provider contract and trust-boundary summary

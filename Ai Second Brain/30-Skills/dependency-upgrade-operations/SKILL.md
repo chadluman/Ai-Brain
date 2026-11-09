@@ -40,6 +40,12 @@ Use [Software Supply Chain Review](../software-supply-chain-review/SKILL.md) for
 9. Roll out through the established release path with owners, health and security signals, stop conditions, and a proven rollback or forward-fix. Confirm every deployed artifact actually contains the intended fixed graph.
 10. Remove obsolete packages, flags, adapters, credentials, registry access, generated outputs, compatibility code, and documentation. Track recurring blocks and replace dependencies whose support, governance, security, or upgrade cost no longer fits.
 
+## End-of-Life Calendar Discipline
+
+- Keep an end-of-life calendar for every runtime and platform in the inventory, reviewed on a fixed cadence, and treat an approaching EOL date as a scheduled migration, not a surprise. Use endoflife.date as a reference for published support windows, and confirm each date against the vendor's own lifecycle page before committing to it.
+- As of this refresh, the runtimes to watch are Node 20 and 22, Python 3.10 and 3.11, .NET 8 and 9, and PHP 8.2 — each with a published support window that will end. Re-check the current EOL dates when planning; version numbers and windows move.
+- Upgrade the runtime and its container base image together: a new runtime on an old base image, or a new base image carrying an old runtime, leaves the graph half-upgraded and the support window unclear. Record both versions in the inventory as one change.
+
 ## Required Output
 
 - dependency and support inventory with ownership, classification, cadence, and re-review triggers

@@ -37,6 +37,13 @@ Create a decision-ready project brief that identifies the real user and business
 8. Record build, buy, reuse, integration, and no-build alternatives without selecting a stack. Identify irreversible and R3 decisions for later approval.
 9. Define exit criteria for proceed, revise, pause, or stop, then hand the brief to architecture selection only when decision-changing unknowns are visible.
 
+## MVP and Prioritisation
+
+- **Riskiest-assumption MVP.** The MVP is the smallest release that tests the riskiest assumption for a specific customer segment. Write each test as a falsifiable hypothesis plus a success metric, a pass threshold, and what is explicitly out of scope for that test; re-decide scope per learning increment rather than once for the whole project. Use [Market Validation Research](../market-validation-research/SKILL.md) when the riskiest assumption is about demand or willingness to change or pay.
+- **RICE, used honestly.** Reach × Impact × Confidence ÷ Effort is data-led only when its inputs rest on evidence. When a team fills in numbers without evidence, the score gives false precision — a guessed input produces a confident-looking ranking. Record the evidence (or its absence) behind each input, use ranges instead of single numbers where evidence is thin, or drop scoring until evidence exists.
+- **Kano sorting.** Separate basic expectations (their absence dissatisfies), performance needs (more is better), and delighters (unexpected, valued when present). Sorting this way keeps must-haves from being crowded out by delighters and stops a delighter being mistaken for a reason to build.
+- **Explicit Won't-have list.** Write the "Won't have (this release)" list into the brief alongside the in-scope list. MoSCoW — Must, Should, Could, Won't have this release — is the common workshop default for drawing the cut-line; the Won't-have list is what prevents scope creep after the decision is made.
+
 ## Required Output
 
 - problem and opportunity statement

@@ -23,13 +23,20 @@ If there is no signing identity for an operating system, do not ship for that sy
 
 ## Workflow
 
-1. Sign installers and updates per operating system, in the release pipeline, not on a developer machine. On macOS, sign with a Developer ID identity, submit for notarization, and staple the ticket; on Windows, sign with an Authenticode certificate; on Linux, ship checksums and, where a package repository is used, repository signing. Record which identity signed each release.
+1. Sign installers and updates per operating system, in the release pipeline, not on a developer machine. On macOS, sign with a Developer ID identity, submit for notarization with `notarytool`, and staple the ticket. (`altool` is no longer usable for notarization — it stopped working in November 2023 — so do not build a pipeline around it.) on Windows, sign with an Authenticode certificate; on Linux, ship checksums and, where a package repository is used, repository signing. Record which identity signed each release.
 2. Sign updates with a dedicated updater key, and bake the matching public key into the app at build time. The updater must verify the signature before installing anything. An unsigned update is the worst supply-chain vector a desktop app has, because it runs with the user's trust already granted.
 3. Never regenerate an updater key casually. Already-installed apps carry the old public key and will reject updates signed with a new one, with no in-app recovery. A key rotation is a migration plan, with a signed transition release and a manual reinstall path, not a secret rotation.
 4. Roll out in stages: a canary group first, then increasing percentages, with a pause switch that stops the rollout without shipping new code. Monitor install success, launch success, and crash rates per stage before advancing.
 5. Keep the previous version recoverable. An update that fails to launch must leave the user able to return to the last working version, by keeping the previous install, by offering a signed manual download, or by both. Test the failure path, not only the success path.
 6. Test the full matrix before a public release: clean install, update from the previous version to the new version, and update from two versions back, on each target operating system, on a clean machine. A pipeline that only tests clean installs will miss updater failures.
 7. Keep signing secrets in the release pipeline's secret store, with access limited to the release role, and never in the repository, in build logs, or in an installer. A leaked signing key is a release-incident, with revocation and rotation, not a quiet replacement.
+
+## 2026 Signing Notes
+
+- Azure Artifact Signing (formerly Azure Trusted Signing) reached general availability in January 2026 and is one option for cloud-hosted Windows code signing; evaluate it like any signing provider, with key custody, audit, and revocation in mind.
+- An Extended Validation (EV) certificate no longer buys SmartScreen reputation on its own. Reputation is earned from signed binaries seen in the wild over time; budget for early SmartScreen warnings on a new publisher and do not treat an EV purchase as a reputation shortcut.
+- The updater-key discipline in step 3 applies unchanged to a Tauri 2 updater keypair: the public key is baked into the app at build time, so losing or rotating the private key strands installed apps on the old key.
+
 
 ## Safety and Permission Boundaries
 

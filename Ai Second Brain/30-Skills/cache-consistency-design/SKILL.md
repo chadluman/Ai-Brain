@@ -38,6 +38,11 @@ Introduce caching only where stale-data tolerance and invalidation are explicit,
 9. Observe hit and miss rates, age, evictions, key cardinality, origin load, refresh errors, stale serves, purge latency, data leakage, and cost.
 10. Test cross-user and cross-tenant isolation, `Vary` behavior, write races, invalidation loss, stale and expired content, cold start, outage, stampede, deletion, and rollback.
 
+## Current Platform Note (2026)
+
+- Where Redis backs the cache, note that Redis 8 folds the former Redis Stack modules into core. Check whether a capability that previously needed a module is now in core before adding a separate component or dependency.
+- Treat cache-population and invalidation consumers as at-least-once: apply invalidations idempotently, using idempotency keys where the consumer supports them, so a redelivered invalidation is safe. This makes the delivery assumption behind step 6 explicit; it does not change the step.
+
 ## Required Output
 
 - measured caching objective and source-of-truth map

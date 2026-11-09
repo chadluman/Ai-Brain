@@ -37,6 +37,19 @@ Select the smallest defensible external service, or choose not to outsource, usi
 8. Compare qualified candidates consistently, record uncertainty, select only for the stated scope, and document a fallback or exit when impact warrants it.
 9. Before activation, complete a provider-specific playbook with exact setup, least privilege, verification, monitoring, cost controls, rollback, disconnection, and removal.
 
+## Structured Adoption Checklist
+
+Run every candidate through the same checklist before selection, and record the evidence (or its absence) per item. This checklist is a synthesis assembled from several sources: no single retrieved source gave a complete checklist, so treat it as a working checklist to validate per candidate, not as a quoted standard.
+
+- **Licence.** Is the licence compatible with the intended use and distribution, including any SDK or client the provider requires? See [Open Source License Review](../open-source-license-review/SKILL.md) for exact-version licence evidence.
+- **CVE history.** What vulnerabilities have been disclosed, how fast were they patched, and are any high-impact issues unresolved? See [Vulnerability Management Operations](../vulnerability-management-operations/SKILL.md) for contextual priority.
+- **Issue and PR responsiveness.** Do maintainers triage and fix in reasonable time, or do issues and pull requests sit unanswered? Unmaintained dependencies are a future incident, not a saving.
+- **Bus factor.** How many people can keep the service or library alive? A single maintainer or a single vendor team is a concentration risk to price into the decision.
+- **Exit cost.** What does leaving cost — export formats, migration effort, contract terms, data gravity, and replacement work? A cheap entry with an expensive exit is not cheap.
+- **Spike validation.** Run a time-boxed isolated proof with dummy data on the critical path before committing: does the claimed fit hold, including failure behavior, rate limits, export, deletion, and revocation?
+
+A candidate that fails a checklist item does not automatically fail the evaluation, but the failure, its consequence, and the accepted risk must be written down with the decision.
+
 ## Required Output
 
 - capability and non-negotiable gate statement

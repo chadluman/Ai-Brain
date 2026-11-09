@@ -35,12 +35,18 @@ When safety, regulated data, active compromise, or reporting obligations may app
 3. Establish a dependable command channel and living state document independent of the failing system where practical.
 4. Stabilize: stop harmful automation, reduce blast radius, preserve evidence, protect credentials and data, and choose the safest reversible mitigation.
 5. Investigate with tracked hypotheses. Record what changed, what is known, what was tested, and why each action was approved. Avoid simultaneous uncoordinated production changes.
-6. Communicate on a declared cadence. Give impact, scope, mitigation, uncertainty, next update time, and action needed; do not speculate.
+6. Communicate on a declared cadence. Give impact, scope, mitigation, uncertainty, next update time, and action needed; do not speculate. On a public status page, move through the states acknowledged, then identified, then resolved, updating at each transition rather than only at resolution.
 7. Restore service in controlled stages. Verify security, data integrity, critical journeys, backlog or replay behavior, monitoring, and rollback readiness before declaring recovery.
 8. Conduct an explicit handoff when command or operational ownership changes. The receiving owner acknowledges current state, risks, next actions, and authority.
 9. Close only when exit criteria are met and residual risks have owners. Preserve the timeline, evidence references, decisions, and customer or regulatory records.
 10. Write a timely blameless postmortem for significant incidents: impact, timeline, detection, contributing conditions, response quality, what went well, what failed, and prioritized corrective actions with owners and dates.
 11. Test the improved response through a tabletop or controlled exercise and update the source runbook rather than layering contradictory notes.
+
+## Runbooks, On-Call Burden, and Assisted Triage
+
+- Every alert that can page must have a runbook: what the alert means, the first checks, the safe mitigations, and the escalation path. An alert without a runbook is an interruption, not a response.
+- Track on-call burden as a metric alongside incident counts: pages per shift, pages outside working hours, and time to acknowledge. A rising burden is a reliability problem even when incidents are handled well, and it is a reason to fix noisy alerts, not to staff more on-call.
+- Treat AI-assisted triage as an unproven aid, not a responder: vendor claims that automated triage shortens incidents are unproven until measured against your own incidents. Any triage aid must be evaluated on real incident data, with a human keeping command, before it is trusted in the response path.
 
 ## Required Output
 

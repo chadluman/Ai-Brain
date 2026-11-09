@@ -40,6 +40,15 @@ Use [Build and Package Toolchain](../build-package-toolchain/SKILL.md) for langu
 9. Test clean setup, repeat setup, offline or restricted network where required, wrong version, missing secret, occupied port, corrupt cache, failed download, service restart, schema reset, update, rollback, teardown, and re-creation on each supported platform class.
 10. Keep ownership, review dates, base and feature updates, deprecations, disk and cache cleanup, telemetry, license, and end-of-life explicit. Remove unused tools and instructions when the production or build stack changes.
 
+## Environment Baseline
+
+Choose the lightest baseline that removes onboarding pain, and climb the ladder only when the current rung fails.
+
+- **Makefile + version manager + Compose.** For a solo developer or small team, a `Makefile` with entry points such as setup, help, and database reset, a version manager pinning runtimes (for example asdf or mise with a checked-in version file), and Compose for stateful services is the cheapest baseline that removes most onboarding pain.
+- **Devcontainers.** When onboarding pain grows or machines diverge, add a development container defined by a checked-in `devcontainer.json` — the open devcontainer spec covering image, tools, extensions, and post-create commands. Devcontainers and Compose are complementary, not alternatives: Compose runs the stateful services, and the devcontainer is the box the code and toolchain run in.
+- **Nix.** Reach for Nix (flakes) only when reproducibility beyond Compose plus devcontainers is actually required. Nix pins every dependency by hash, so the same shell is bit-for-bit reproducible on a laptop and in CI — at the cost of a real learning curve for the team.
+- **Seed data.** Provide migrate and seed steps with a reset that reseeds from scratch. Realistic data comes only from masked dumps; never put production PII on developer machines. Synthetic or masked seed data is the default, and any exception needs explicit authorization and governed handling.
+
 ## Required Output
 
 - prerequisite and network inventory, supported platform matrix, and selected environment approach

@@ -28,6 +28,12 @@ Define entities and relationships, invariants, transaction boundaries, query and
 9. Implement backup and restoration as a tested recovery process. A successful backup job without a verified restore is not recovery evidence.
 10. Record the decision and exit path in an ADR with data-export format, downtime assumptions, provider-coupled features, and vendor-lock-in consequences.
 
+## Current Default (2026)
+
+Start from PostgreSQL as the default primary store when its model fits: use JSONB for flexible or semi-structured fields inside the relational model, and pgvector for modest vector workloads, before adding a second store. A dedicated vector store is justified by measured vector scale or retrieval requirements — the 2026 research cited 100M+ vectors as a rough threshold for that step. Treat that figure as a rule of thumb, not a measured boundary, and prove the decision with the project's own workload. See [Retrieval and Grounding Design](../retrieval-grounding-design/SKILL.md) for the retrieval side.
+
+When a document store is a candidate, check its licence as part of step 4: MongoDB is distributed under the SSPL, which is not an OSI-approved open-source licence. Record the licence finding in the comparison and have it reviewed under [Open Source License Review](../open-source-license-review/SKILL.md) before relying on it.
+
 ## Guardrails
 
 - A cache, search index, analytics warehouse, or event stream is not the source of truth unless its durability and correction model intentionally support that role.

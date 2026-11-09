@@ -38,6 +38,14 @@ Build a bounded adapter that preserves domain truth and user experience when the
 9. Reconcile local and provider records by stable identifiers, state, amount, timestamps, deletes, and business invariants. Design replay, backfill, correction, and duplicate handling.
 10. Test sandbox and controlled failure: timeout before and after provider commit, 429, 5xx, invalid JSON, schema drift, pagination loop, stale token, revoked scope, clock skew, provider outage, duplicate response, and partial batch.
 
+## Delivery Guarantees for Provider Events
+
+When the provider also pushes events, or when polling must stand in for pushes, design for at-least-once delivery: expect duplicates, expect out-of-order arrival, and never treat a single delivery as proof of exactly-once effect.
+- Verify signatures on the raw, unparsed body before trusting any event field, using the provider's documented scheme; parse only after verification passes.
+- Deduplicate on the provider's event identifier, persisted durably before the effect is applied, so a redelivery cannot repeat a consequential action.
+- Enumerate replay paths in the design: provider redelivery, manual operator replay, reconciliation-driven backfill, and dead-letter reprocessing. Each path must pass through the same deduplication and idempotency checks as a first delivery.
+- Use [Webhook Integration Design](../webhook-integration-design/SKILL.md) for the inbound webhook contract; this skill owns the outbound adapter and the reconciliation that proves the provider's view matches the local one.
+
 ## Required Output
 
 - domain and provider state mapping with source of truth

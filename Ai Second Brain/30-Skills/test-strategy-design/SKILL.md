@@ -44,6 +44,14 @@ Use [Software Quality Assurance](../software-quality-assurance/SKILL.md) for the
 9. Test the test: deliberately break representative behavior and confirm the expected test fails for the right reason.
 10. Record exact versions, environment, seed, data, result, artifacts, and untested risks in release evidence.
 
+## 2026 Defaults and Level Criteria
+
+Record the framework defaults the strategy assumes, and re-check current releases before citing versions: Vitest with Playwright for web unit and browser end-to-end work, pytest for Python services, and Appium for native mobile automation. Defaults are a starting point; a project's existing stack and measured evidence can justify a different choice, and the choice must be recorded with its reason.
+- Name the end-to-end golden paths — the small set of critical user journeys that must pass before any release — and keep the set small enough that it stays fast and trustworthy.
+- Set a flakiness budget per suite and enforce it: a cited 2026 figure treats under 5% flaky tests as the budget to stay within, with quarantine only under a named owner and deadline. Treat the figure as a cited budget, not a measured property of any project.
+- Define entry and exit criteria for each test level: what must be true before the level runs (environment, data, dependencies ready) and what must be true before its evidence counts (pass threshold, flake budget met, failures owned). A level with no exit criteria cannot block a release.
+- Link load and performance evidence to [Load Testing Design](../load-testing-design/SKILL.md) where load risk requires it.
+
 ## Required Output
 
 - risk-to-test traceability matrix

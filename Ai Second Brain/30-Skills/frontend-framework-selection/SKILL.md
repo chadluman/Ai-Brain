@@ -26,6 +26,16 @@ Establish critical journeys, route and rendering needs, content and discoverabil
 7. For a high-impact or close decision, implement the same thin route in the leading candidates with dummy data. Measure the risky claims and document setup, build, output, accessibility, and failure behavior.
 8. Record the choice, rejected options, version evidence, consequences, and exit path in an ADR.
 
+## 2026 Currency
+
+Versions below are the research snapshot dated 2026-11-09. Re-check current releases against official documentation before citing a version in a decision; version claims beyond React 19.3 and Next.js 16 come from secondary sources and may already be stale.
+
+- **React 19.3** is the current React line, with stable Server Components and an Actions API for forms.
+- **Next.js 16** is the current major line, with Turbopack as the default bundler and Cache Components as the recommended caching model. See [Frontend Rendering Selection](../frontend-rendering-selection/SKILL.md) for what Cache Components change about rendering and cache decisions.
+- **Svelte 5** replaced implicit reactivity with explicit Runes (`$state`, `$derived`, `$effect`).
+- **Astro 5** added a Content Layer and Server Islands for partial dynamic rendering, and ships zero JavaScript by default.
+- **Do not start new work on:** Create React App, deprecated by the React team in 2025 — start new React apps with Vite or a meta-framework; Vue 2, which reached end of life in 2023; AngularJS (1.x), unsupported since 2022. Existing projects on these need a migration plan, not a new commitment.
+
 ## Guardrails
 
 - Maintainer recommendations explain intended use; they do not prove project fit or superiority over another framework.

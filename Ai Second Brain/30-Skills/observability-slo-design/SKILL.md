@@ -27,6 +27,14 @@ Identify critical journeys and dependencies, user populations, expected traffic,
 8. Test instrumentation and alerts through synthetic failures, deployment markers, sampling checks, clock and correlation behavior, backend outage, and retention or quota exhaustion.
 9. Review false positives, missed incidents, cost, privacy, and unused signals; remove telemetry that does not support a decision.
 
+## Telemetry Plumbing and 2026 Notes
+
+- Treat OpenTelemetry as plumbing, not as the observability product: instrument with the OTel SDKs, export via OTLP to an OTel Collector, and let the Collector route, sample, and redact before data reaches a backend. A backend change then does not require re-instrumenting the service.
+- Prefer tail-based sampling for traces: decide what to keep after a trace completes, so rare slow or failed traces are preserved while routine successful traces are sampled down. Head sampling alone discards the interesting traces before their outcome is known.
+- Treat high-cardinality labels as a cost trap: every distinct label combination multiplies stored series and query cost. Keep labels to low-cardinality dimensions (service, endpoint, status) and put high-cardinality values in logs or trace attributes, not metric labels.
+- Alert on error-budget burn rate, not only on absolute error counts: a fast burn over a short window pages, a slow burn over a long window opens a review ticket. Define both windows and the action each triggers.
+- Expect on-call tooling churn in 2026: Opsgenie end-of-life is reported as April 2027 and Grafana OnCall archival as March 2026. [secondary-sourced — not confirmed against Atlassian or Grafana primary announcements; verify before planning a migration.] Do not build a new on-call workflow on a tool whose future is uncertain without checking its current status.
+
 ## Safety and Scope
 
 - Telemetry is production data. Exporting it to a third party, enabling session replay, or changing retention or access is R3 when real or private data is involved.

@@ -15,6 +15,7 @@ Read [standards and evidence](references/standards-and-evidence.md) when establi
 
 - Identify target users, jurisdictions, product surfaces, critical journeys, supported browsers/devices, input methods, and assistive-technology expectations.
 - Record the requested conformance target. If none is supplied, use WCAG 2.2 Level A and AA as a planning baseline and label that choice as an assumption, not legal advice.
+- Record whether the European Accessibility Act applies to the product's markets. It has applied since June 2025. Treat that as a scoping input for which journeys and obligations to check, not as legal advice.
 - Inventory pages, components, content types, states, errors, dialogs, asynchronous updates, authentication, checkout, and other high-impact flows.
 
 ## Review Priorities
@@ -27,6 +28,12 @@ Read [standards and evidence](references/standards-and-evidence.md) when establi
 6. Exercise every critical journey and important component state, not only the initial page render.
 
 Automated checks are useful for repeatable detectable rules but are not sufficient. Combine them with keyboard review, visual inspection at relevant zoom/reflow settings, assistive-technology testing appropriate to the support matrix, and task-based human evaluation when risk warrants it.
+
+## Automated Tools and Their Limits
+
+Treat automated-check coverage as partial, not as a conformance verdict. Research reported in 2026 puts automated detection at roughly 30–57% of accessibility issues, so a clean automated run is not evidence that a journey is accessible — manual keyboard, zoom and reflow, assistive-technology, and task-based testing remain required. [Unverified: the 30–57% figure is quoted from a secondary source, not read from the primary reports.]
+
+The February 2026 WebAIM Million findings were reported in the same research as showing a regression in detected accessibility errors. [Unverified: secondary source only.] Re-check the current WebAIM findings before citing them, and do not carry a dated error count into a review as if it were current.
 
 ## Findings
 

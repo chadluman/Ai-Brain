@@ -39,6 +39,10 @@ If there is no data inventory, build one before building the export. An export b
 - Export delivery links must expire, must be encrypted in transit, and must not be logged in full. A permanent, public export URL is a breach, not a feature.
 - A new export, storage, or delivery tool still requires the root security-review gate at its exact version. This skill approves no provider or package.
 
+## Sunsetting the Export
+
+When the product itself is being retired, the export must be built and working before the shutdown is announced — users need a working exit while the service still runs, not a promise after it stops. Provide the export in CSV or JSON under the portability model this skill follows (GDPR Article 20 for data provided under consent or contract by automated means), keep the export available through the announced notice period, and stop billing before the service stops serving. See [Deprecation and Sunset Design](../deprecation-and-sunset-design/SKILL.md) for the full shutdown sequence, notice, and deletion duties.
+
 ## Outputs and Evidence
 
 - A data inventory with export scope per entity, and stated exclusions.
