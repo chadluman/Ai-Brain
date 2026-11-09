@@ -39,6 +39,13 @@ Produce an authenticated, consent-aware email system with separated risk domains
 10. Launch gradually and measure by stream, domain, provider, and cohort. Watch complaint, bounce, deferral, authentication, block, latency, and cost signals; pause on threshold breach and keep a tested in-product recovery path for missed critical mail.
 11. Rehearse provider outage, DNS error, DKIM rotation, DMARC policy rollback, shared-IP reputation event, complaint spike, forwarding breakage, suppressed critical recipient, duplicate event, and migration using synthetic addresses and non-production domains.
 
+## Provider Trade-offs (2026 refresh)
+
+Compare sending providers on the dimensions that decide fit, not on marketing claims: deliverability tooling and reputation controls, API and webhook quality, separate-stream and subdomain or IP isolation support, bounce, complaint, and suppression handling, template and tracking behaviour, migration and export, data handling, support, and exit cost. Candidates reported in 2026 research include Resend, Postmark, SendGrid, and Amazon SES; each trades ease of setup, deliverability tooling, and operational control differently, so record the comparison against the project's own streams rather than adopting a default.
+- Keep marketing and transactional streams separate at the subdomain, IP-pool, and suppression level, so a marketing complaint spike cannot damage security or transactional mail.
+- Design webhook handling for replay: provider webhooks can arrive more than once, so process delivery events idempotently by provider event or message identifier and make replay safe.
+- SendGrid's free tier was reported retired in May 2025; do not plan a design around it without confirming current availability on the vendor's own pages.
+
 ## Required Output
 
 - message-stream and permission matrix with delivery and harm requirements

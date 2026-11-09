@@ -20,6 +20,8 @@ Read [metrics and evidence](references/metrics-and-evidence.md) before fixing th
 
 Use field data to understand actual experience. Use reproducible lab tests to diagnose and prevent regressions. When field data is unavailable, label lab-based conclusions and plan how representative field evidence will be collected.
 
+Measure field performance over a 28-day rolling window, the window used by the Chrome User Experience Report, so that a single good or bad day does not move the verdict. INP has replaced FID as the responsiveness indicator; do not set FID budgets for new work, and retire FID thresholds in existing plans when they come up for review.
+
 ## Diagnose Before Optimizing
 
 - LCP: break down server response, resource discovery, resource transfer, and render delay.
@@ -33,6 +35,14 @@ Prioritize changes by user impact, affected traffic, confidence, engineering cos
 ## Budgets and Verification
 
 For each budget record the metric, journey, segment, threshold, percentile, test or field method, environment, owner, and release consequence. Include variance and repeated runs for lab measurements.
+
+Use these as starting defaults to confirm per journey, measured in the field at the 75th percentile over a 28-day window:
+
+- LCP under 2.5 seconds
+- INP under 200 milliseconds
+- CLS under 0.1
+
+Treat them as budgets to defend, not guarantees: confirm the thresholds and the window against the project's own field data, and record any journey where a different threshold is justified.
 
 If real-user monitoring or analytics is proposed, perform privacy, consent, data-minimization, retention, telemetry, and dependency review before adding a library or endpoint.
 

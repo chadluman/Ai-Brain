@@ -36,6 +36,13 @@ Create a controlled, observable, reversible rollout with deterministic evaluatio
 7. Roll out to the smallest useful cohort, compare with a control where appropriate, and increase exposure only after the observation gate.
 8. Decide ship, revise, or stop. Remove the losing path, flag checks, configuration, unused telemetry, and provider objects by the expiry date.
 
+## Vendor-Neutral Evaluation and Ramp Discipline
+
+- Prefer a vendor-neutral flag evaluation interface: OpenFeature is the 2026 vendor-neutral standard for flag evaluation, so code calls a stable API and the provider behind it can change without rewriting call sites. The provider choice itself still needs the usual evaluation for reliability, latency, and cost.
+- Ramp in small steps from 1% toward 100%, with a soak of at least 24 hours at each stage, so each exposure level gets a full daily cycle of traffic before the next increase. Advance only when the observation gate in step 7 passes; pause or roll back on a guardrail breach.
+- Use sticky bucketing: the same user or workload must see the same variant on every evaluation, across devices and sessions where identity allows, so a ramp does not flip users between paths and corrupt experiment or guardrail signals.
+- Record an owner and an expiry (TTL) for every flag at creation, and review flags whose TTL passes without removal. A flag without an owner and a removal date becomes permanent configuration debt.
+
 ## Required Output
 
 - flag classification, contract, owner, expiry, and safe default

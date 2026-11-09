@@ -42,6 +42,12 @@ If work can safely complete within the request and does not need independent ret
 9. Observe age of oldest job, backlog, arrival/completion rates, latency, attempts, failures, quarantine, worker saturation, and cost. Alert on user impact and exhaustion risk.
 10. Test duplicate execution, worker crash before and after the side effect, timeout, dependency outage, overload, poison input, delayed job, schema change, cancellation, replay, and recovery.
 
+## Current Platform Note (2026)
+
+- BullMQ 5 is a current Redis-backed worker-library option to evaluate against the selection criteria in step 2 — a candidate, not a default. Record the exact version reviewed.
+- Where Redis backs the queue, note that Redis 8 folds the former Redis Stack modules into core. Check core coverage before adding modules or extra components.
+- Nothing in this note changes the delivery and idempotency rules: the at-least-once assumption in Safety and the idempotency-key and idempotency-record patterns in step 4 remain the operative rules.
+
 ## Required Output
 
 - synchronous-versus-asynchronous decision and selected mechanism

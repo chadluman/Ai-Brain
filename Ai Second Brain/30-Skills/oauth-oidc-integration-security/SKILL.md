@@ -40,6 +40,14 @@ Use [Identity and Authentication Selection](../identity-auth-selection/SKILL.md)
 9. Test malicious redirect inputs, transaction replay, code injection, mix-up, issuer and audience confusion, algorithm and key substitution, expired or future tokens, wrong token type, scope escalation, stolen refresh tokens, DPoP or mTLS mismatch, key rotation, provider outage, logout gaps, and tenant crossing.
 10. Rehearse migration and rollback without losing local account identity, authorization, audit continuity, recovery routes, or the ability to revoke old credentials.
 
+## Current Direction (2026)
+
+This section names the current direction; the workflow steps above remain the operative detail.
+
+- Treat OAuth 2.1 as the current direction for new integrations: PKCE mandatory, with the implicit and resource-owner-password flows removed. [Unverified: its final IETF status was unverified at the time of the 2026 research — confirm the current status before citing it as final.] Keep this skill's RFC 9700, RFC 8252, and RFC 10017 profile guidance as the operative detail until that status is confirmed.
+- Where a browser client holds tokens, prefer short-lived access tokens (5–15 minutes) with rotating refresh tokens held in HttpOnly cookies through a backend-for-frontend, rather than tokens in readable browser storage. See [Session and Cookie Security](../session-cookie-security/SKILL.md) for the session side.
+- Passkeys as the primary login is an identity-architecture decision owned by [Identity and Authentication Selection](../identity-auth-selection/SKILL.md). This skill covers the federated and OIDC side once that decision is made — including how the federated login result is converted into the application session in step 7.
+
 ## Required Output
 
 - actor, token, key, redirect, session, and trust-boundary map

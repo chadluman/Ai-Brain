@@ -26,6 +26,12 @@ Identify user populations, account lifecycle, data and action sensitivity, abuse
 7. Enforce authorization from trusted server-side identity and resource context on every operation. Roles or claims from a client do not authorize access by themselves.
 8. Test enumeration, credential stuffing, replay, fixation, cross-tenant access, recovery abuse, confused-deputy and redirect attacks, clock skew, key rotation, provider outage, accessibility, and rollback.
 
+## Current Direction (2026)
+
+- Treat passkeys as the primary login where platform and browser support allow, with a fallback authenticator and a recovery path designed alongside them — not added as an afterthought. Record which populations or devices cannot use passkeys and what they use instead.
+- Treat OAuth 2.1 as the current direction for delegated authorization: PKCE mandatory, with the implicit and resource-owner-password flows removed. [Unverified: the final IETF status of OAuth 2.1 was unverified at the time of the 2026 research — confirm the current status before citing it as final.] See [OAuth and OpenID Connect Integration Security](../oauth-oidc-integration-security/SKILL.md) for the integration side.
+- Keep access tokens short-lived: JWT access tokens with a 5–15 minute lifetime, paired with rotating refresh tokens stored in HttpOnly cookies rather than readable client storage. See [Session and Cookie Security](../session-cookie-security/SKILL.md) for the session side.
+
 ## Safety and Permission Boundaries
 
 - Do not design custom password hashing, cryptographic protocols, token formats, or passkey verification when maintained standards-based implementations fit.

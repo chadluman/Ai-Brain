@@ -37,6 +37,14 @@ Create a reproducible, least-privilege mobile release path that protects long-li
 8. Submit only with authorization, monitor review communications, preserve the submitted artifact and metadata, then verify listing, install, sign-in, purchase if used, links, and production service health after release.
 9. Protect update continuity, monitor policy and SDK deadlines, rehearse compromised upload credentials, maintain reviewer and support contacts, and retire old backend contracts only after supported app adoption allows it.
 
+## 2026 Store-Policy Points for Release Operations
+
+- Plan for Apple rejecting roughly one in four submissions (2025 figures): keep a rejection-response round in the schedule and never treat first submission as the release date.
+- New Google Play personal accounts need a closed test with at least 12 testers for 14 days before production access; schedule that window before the first public release.
+- Google Play requires targeting API level 36 from 31 August 2026; confirm the target SDK in the release artifact before submission.
+- Apple requires building with Xcode 26 and the iOS 26 SDK. [unverified — the iOS 26 SDK requirement detail after 9 September 2026 was not confirmed against developer.apple.com; verify before relying on it.] The date of Apple's most recent guideline update is likewise unverified in this research (16 October 2026 vs 8 June 2026 in different secondary sources); confirm on developer.apple.com.
+- Re-verify every figure above against the official store pages immediately before submission; see [App Store Policy Readiness](../app-store-policy-readiness/SKILL.md).
+
 ## Required Output
 
 - account, role, identifier, signing, recovery, and ownership inventory

@@ -33,6 +33,12 @@ Cover only applicable controls, including:
 
 Integrate security into planning, development, review, release, and vulnerability response rather than treating it as a final scan.
 
+## 2026 Currency: OWASP Top 10 2025 and Scanning Layers
+
+Cite the OWASP Top 10:2025 edition when framing findings, and record the edition used. Two placements reported from that edition shape review priorities: supply-chain failures at #3 and exceptional conditions at #10. The exact ordering of the middle items was not checked against the primary source for this refresh, so cite only the placements recorded here and re-check the list before citing others.
+- Layer scanning so each layer catches what the others miss, in order: secrets scanning, software composition analysis (SCA) for known dependency vulnerabilities, static analysis (SAST) for code-level flaws, and dynamic analysis (DAST) for running-application behaviour. A pass at one layer is not evidence for the others.
+- Pin build and pipeline dependencies by content hash (SHA-pinning), not by mutable tag, after the March 2026 tag-rewriting attack reported against Trivy images showed a tag can point at different content over time. Apply the same rule to workflow actions and container images; see [CI/CD and Release Design](../ci-cd-release-design/SKILL.md) and [Software Supply Chain Review](../software-supply-chain-review/SKILL.md).
+
 ## Evidence and Findings
 
 For each control, record `pass`, `fail`, `not applicable`, or `not tested`, with evidence. For each finding include:

@@ -38,6 +38,15 @@ Produce a reversible, observable migration that preserves defined invariants, au
 9. Keep a tested rollback or roll-forward path, including application versions and queued events. Record the point beyond which rollback changes to compensating migration.
 10. After an observation window, reconcile again, retire old writers, revoke credentials, archive required evidence, delete temporary copies, and explicitly approve source retirement.
 
+## PostgreSQL Expand-and-Contract
+
+For PostgreSQL schema changes, use expand-and-contract: add the new shape first, dual-write or backfill, move readers, then remove the old shape in a later release. Keep each statement short-lived and non-blocking:
+
+- Set a `lock_timeout` on migration sessions so a blocked DDL statement fails fast instead of queueing behind long transactions and blocking new work.
+- Build new indexes with `CREATE INDEX CONCURRENTLY` so index creation does not take a write-blocking lock on the table.
+- Add new constraints as `NOT VALID`, backfill or validate existing rows separately, then `VALIDATE CONSTRAINT` — validating does not block writes the way adding a validated constraint does.
+- Backfill in bounded batches of roughly 1,000–5,000 rows per transaction, with checkpoints and resumability, so a backfill does not hold long transactions, bloat the write-ahead log, or starve live traffic; throttle or pause when latency or replication lag rises.
+
 ## Required Output
 
 - source-target map, invariants, ownership, and dependency inventory

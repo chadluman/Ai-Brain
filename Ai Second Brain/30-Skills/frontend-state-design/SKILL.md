@@ -27,6 +27,19 @@ Inventory user journeys, routes, canonical server data, drafts, filters and navi
 8. Add a state library only when framework primitives and small modules cannot meet measured coordination, debugging, or testing needs. Review its exact dependency and lifecycle.
 9. Test navigation, refresh, deep link, slow and failed requests, duplicate submissions, stale responses, auth expiry, account change, storage loss, offline and reconnect, concurrency, and assistive announcements.
 
+## Split State by Kind (2026 Currency)
+
+Do not put every kind of state in one store. Split by kind, with one owner per kind:
+
+- **Server state** — anything fetched from the server (lists, profiles, detail records): TanStack Query, with explicit fetch, cache, invalidation, mutation, and error handling. Server state goes stale, needs refetching and caching, and needs optimistic-update handling — problems a general client store was not designed to solve.
+- **Client state** — shared UI state owned by the browser (signed-in user context, theme, cart, open panels): Zustand or a similar small store.
+- **Form state** — inputs plus validation: React Hook Form with Zod schemas.
+- **URL state** — filters, pagination, and shareable views: URL search parameters, which can also serve as cache keys for server state.
+
+Start with built-in framework primitives plus TanStack Query and Zustand; add Redux Toolkit only when team size and domain complexity justify its ceremony. Never duplicate the same fact in two stores.
+
+**Recoil:** the Recoil repository was archived in 2025. Do not choose it for new work; Jotai offers a similar atom model and is actively maintained.
+
 ## Safety and Scope
 
 - Do not store credentials, authorization decisions, private keys, or unnecessary personal data in URLs or browser persistence.

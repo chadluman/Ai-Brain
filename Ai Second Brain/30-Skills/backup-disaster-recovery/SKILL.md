@@ -27,6 +27,13 @@ Inventory critical journeys, systems of record, files and media, identity and se
 8. Define failover, failback, conflict reconciliation, degraded operation, manual workarounds, and the authority to declare and end a disaster.
 9. Re-test after material schema, provider, encryption, identity, topology, or retention changes.
 
+## Recovery Design Rules
+
+- Follow 3-2-1-1-0: three copies of data, on two different media types, with one copy offsite, one copy immutable or offline, and zero errors in verified restores. A backup that has never been restore-tested counts as zero verified copies.
+- Test restores at least quarterly, and after every material change to schema, provider, encryption, identity, or topology. A restore test that only checks that files exist is not a test; it must bring the service back and validate representative journeys.
+- Multi-AZ is not multi-region: availability-zone redundancy protects against a single zone failure, not a region-wide outage or a provider-level control-plane failure. Regional disaster recovery needs a tested plan in a second region, not only a second zone.
+- Plan for the ways failover itself fails: DNS TTLs that keep clients pointed at the dead region, connection storms when every client reconnects at once, and default security groups or configuration that do not match the primary. Rehearse failover with real traffic patterns, not only with a checklist.
+
 ## Safety and Permission Boundaries
 
 - A configured or successful backup job is not evidence that the service can be restored within objectives.

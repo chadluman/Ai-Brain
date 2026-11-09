@@ -37,6 +37,13 @@ Create an evidence-based capacity and operating-cost model tied to user demand, 
 9. Validate forecasts against actuals, load-test evidence, launch behavior, and invoices. Track unit cost, forecast error, headroom, saturation, unallocated cost, and cost per reliable user outcome.
 10. Re-evaluate at material demand, architecture, price, quota, SLO, region, or feature changes; do not let one-time estimates become permanent truth.
 
+## FinOps Discipline and Cost Traps
+
+- Clean before committing: remove unused resources, right-size over-provisioned ones, and delete orphaned volumes, snapshots, and idle endpoints before buying reservations or committed-use discounts. A commitment on top of waste locks the waste in.
+- Treat free tiers as time-bound traps, not permanent capacity: limits, eligibility windows, and included usage change without a product change on your side. One reported case is an RDS free-tier account cutoff in mid-July 2025. [secondary-sourced — not verified against AWS documentation; confirm current free-tier terms before relying on them.] Model what the workload costs at full price before depending on a free tier.
+- Budget observability as a first-class cost: log volume, metric cardinality, trace retention, and query load scale with traffic and can exceed compute spend. The cardinality controls in [Observability and SLO Design](../observability-slo-design/SKILL.md) are cost controls, not only hygiene.
+- Apply reserved and spot discipline together: reserve only steady-state baseline capacity you can measure, use spot or on-demand for variable and interruptible work, and re-check utilization against the commitment before renewing. An unused reservation is a fixed cost, not a saving.
+
 ## Required Output
 
 - scenario-based demand forecast and assumptions

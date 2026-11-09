@@ -26,6 +26,14 @@ For each important route or journey, establish content freshness, public discove
 7. When the choice remains uncertain, build a thin representative route and measure field-relevant outcomes under representative device, network, data, and cache conditions.
 8. Record the material decision in an ADR and define triggers for revisiting it.
 
+## 2026 Currency
+
+Framework versions constrain rendering modes, so check the rendering model of the exact version selected in [Frontend Framework Selection](../frontend-framework-selection/SKILL.md) — do not assume a framework's current rendering defaults match an older version's. Versions below are the research snapshot dated 2026-11-09; re-check current releases before citing them.
+
+- **Next.js 16 / Cache Components.** Cache Components are the recommended caching model in Next.js 16 (recommended for every app from 16.4, default for new projects, slated to become the default in Next.js 17). This changes the server-rendering default: decide cache boundaries per route explicitly rather than assuming dynamic rendering, and record what is cached, for how long, and how it invalidates.
+- **Astro 5 / Server Islands.** Server Islands allow partial dynamic rendering inside otherwise static pages, and Astro ships zero JavaScript by default — content-first routes can stay static with islands carrying only the dynamic parts.
+- **React 19.3 Server Components and Svelte 5 Runes.** Server Components move rendering and data loading to the server for routes that need it, while Runes make Svelte reactivity explicit; either way, the framework version — not the framework name — decides which rendering modes are actually available to a route.
+
 ## Guardrails
 
 - Do not select a framework first and retrofit its preferred rendering model to every route.

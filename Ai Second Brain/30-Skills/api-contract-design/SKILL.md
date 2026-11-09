@@ -27,6 +27,23 @@ Identify consumers and owners, trust boundaries, operations and invariants, data
 8. Specify evolution rules: additive changes, deprecation notice, version negotiation, compatibility window, schema migration, consumer inventory, and removal evidence.
 9. Verify examples and schemas, run provider and consumer contract tests, and test malformed, unauthorized, oversized, duplicated, reordered, slow, and failed requests.
 
+## Protocol, Specification, and Versioning
+
+Use this section to make step 2 and step 8 concrete. It is a starting heuristic, not a ranking — choose from the requirements, never from fashion.
+
+| Need | Lean toward |
+|---|---|
+| Simple CRUD over HTTP, with caching and broad client support | REST |
+| Client-driven field selection, many related types, aggregated reads | GraphQL |
+| Type-safe client-server calls inside one TypeScript codebase | tRPC |
+| High-throughput service-to-service calls or streaming with strict schemas | gRPC |
+
+Describe HTTP APIs with OpenAPI 3.1 as the current specification version, and record the exact specification version in the deliverable.
+
+Prefer cursor pagination for large or changing lists: offset pagination can skip or repeat rows as data changes underneath the reader. [Standard practice; no dedicated source was retrieved for this guidance.]
+
+Record a versioning plan up front, before the first consumer ships: how versions are signalled, how long old versions are supported, how consumers are notified before removal, and what evidence justifies removal. See [Deprecation and Sunset Design](../deprecation-and-sunset-design/SKILL.md) for the deprecation and sunset side of that plan.
+
 ## Safety and Scope
 
 - A schema describes shape; it does not replace runtime validation, authorization, output encoding, abuse prevention, or business invariants.

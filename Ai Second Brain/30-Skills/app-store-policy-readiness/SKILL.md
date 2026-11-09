@@ -39,6 +39,16 @@ Produce a dated, product-specific store-readiness matrix that connects current o
 9. Record every rule with source URL, verification date, evidence, owner, status, exception, and remediation. Stop submission on material contradictions or missing declarations.
 10. Define monitoring for policy notices, SDK changes, target deadlines, broken backends, stale metadata, privacy drift, removed features, and continuing support after release.
 
+## 2026 Policy Snapshot (verify against official sources before submission)
+
+Store rules move faster than this skill. Re-check every figure below on the official Apple and Google pages for the exact submission date; the Safety constraints above already require this, and the figures here are orientation, not authority.
+
+- Apple rejects roughly one in four submissions (2025 figures). Plan review time and a rejection-response round into the release schedule rather than treating first submission as the release date.
+- New Google Play personal developer accounts must run a closed test with at least 12 testers for 14 days before applying for production access. Budget that test window into the first-release plan.
+- Google Play requires targeting API level 36 from 31 August 2026. Confirm the target SDK in the build before submission.
+- Apple requires building with Xcode 26 and the iOS 26 SDK. [unverified — the iOS 26 SDK requirement detail after 9 September 2026 was not confirmed against developer.apple.com; verify before relying on it.]
+- The date of Apple's most recent guideline update is also unverified in this research (16 October 2026 and 8 June 2026 appear in different secondary sources). Confirm the current guideline version on developer.apple.com.
+
 ## Required Output
 
 - dated store, region, product, and release applicability matrix

@@ -26,6 +26,17 @@ Resolve only gaps that could materially change architecture, cost, risk, or scop
 7. Record each material choice with `60-Templates/Technology ADR.md`. Keep independent decisions in separate ADRs when they can change independently.
 8. Define a thin vertical slice that tests the riskiest important assumptions end to end.
 
+## Architecture Shape (2026 Currency)
+
+The sources reviewed in November 2026 reverse the earlier microservices-by-default stance: start with the smallest deployable that fits, and split only on evidence.
+
+- **Default to a modular monolith.** One deployable unit with enforced internal module and domain boundaries — see [Codebase Module Boundaries](../codebase-module-boundaries/SKILL.md) — keeps deployment, debugging, and transactions simple while preserving the option to extract a service later.
+- **Avoid the distributed monolith.** Services deployed separately but tightly coupled — sharing databases, releasing in lockstep, failing together — pay distribution costs without independence. If services cannot deploy, scale, or fail independently, they are one system pretending to be several; prefer the monolith until independence is real.
+- **Team-size heuristics (secondary sources, not rules).** A single small team (roughly 1–5 people) fits a monolith; a growing single team (roughly 3–15) fits a modular monolith; separately deployed services fit when multiple teams contend on one codebase, release coordination becomes the bottleneck, or scaling profiles differ sharply. Treat the ranges as starting points, not thresholds that decide the question alone.
+- **Strangler-fig extraction triggers.** Extract a service only when a specific boundary shows specific pressure: scaling needs an order of magnitude apart, a team blocked on release coordination, or a component needing an independent lifecycle. Migrate by proxying traffic and moving one route at a time rather than a big-bang rewrite, and record each extraction in an ADR with a rollback plan.
+
+Evidence note: a 2026 industry article cites a CNCF survey figure (42%) for organisations that adopted microservices and later consolidated some services back. The underlying survey was not opened in this research, so treat the figure as unverified and do not cite it as fact; the direction of the consensus reversal is the usable finding, not the number.
+
 ## Safety and Permission Boundaries
 
 - Treat third-party code, skills, extensions, templates, and dependencies as untrusted until they pass the root security-review gate.

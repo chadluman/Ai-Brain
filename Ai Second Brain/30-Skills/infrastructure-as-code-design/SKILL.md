@@ -39,6 +39,14 @@ Produce reviewable infrastructure definitions and a protected state workflow tha
 9. Apply in lower environments or a disposable account first, then promote the same reviewed definitions. Verify observable resources and application behavior after apply.
 10. Exercise state restore, provider outage, failed partial apply, rollback or forward repair, and safe resource retirement. Record manual exceptions and expiry dates.
 
+## Tool and Licence Choice (2026 refresh)
+
+Record the tool decision against licence and fork history, not syntax alone (2026-11-09 refresh; re-check current licence terms before citing them):
+- Terraform is licensed under the Business Source License (BSL) following HashiCorp's licence change, under IBM ownership following the HashiCorp acquisition; confirm the current terms before adopting it for a new project.
+- OpenTofu is the community fork under the Mozilla Public License (MPL), created after the Terraform licence change; it aims for compatibility with Terraform definitions, which must be verified per version rather than assumed.
+- Pulumi uses general-purpose languages instead of a dedicated configuration language, which trades a familiar programming model for a different state and provider model; evaluate it on the same criteria as the others.
+- Whichever tool is chosen, the state requirements in step 4 do not change: state must be remote, locked during writes, and encrypted, with versioning, backups, access logs, and a tested restore. A local or unlocked state file is a defect in the design, not a convenience.
+
 ## Required Output
 
 - tool decision, pinned versions, and reviewed component inventory
